@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:15.1-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./.data/postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: event-booking-app
+  redis:
+    image: redis:6.0-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./.data/redis:/data/cache
+  mellisearch:
+    image: getmeili/meilisearch:v1.0.0
+    ports:
+      - "7700:7700"
+    volumes:
+      - ./.data/meilisearch:/data.ms
+    environment:
+      MEILI_MASTER_KEY: masterKey
+
+# Notes:
+# We alpine images to keep the container images small.
+# The image is the name of the image to use for the container.
+# The ports are used to expose the services to the host machine.
+# The volumes are used to persist data between restarts of the containers.

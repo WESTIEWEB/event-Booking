@@ -1,0 +1,17 @@
+export enum EventListingProviders {
+  EventListingService = 'IEventListingService',
+  EventTypeService = 'IEventTypeService',
+  EventTicketService = 'IEventTicketService',
+  CategoryService = 'ICategoryService',
+  EventListingRepository = 'IEventListingRepository',
+  EventListingReadRepository = 'IEventListingReadRepository',
+  EventTypeRepository = 'IEventTypeRepository',
+  EventTypeReadRepository = 'IEventTypeReadRepository',
+  EventTicketRepository = 'IEventTicketRepository',
+  EventTicketReadRepository = 'IEventTicketReadRepository',
+  CategoryRepository = 'ICategoryRepository',
+  CategoryReadRepository = 'ICategoryReadRepository',
+  EventCategoryRepository = 'IEventCategoryRepository',
+  EventLinkReadRepository = 'IEventLinkReadRepository',
+  EventLinkRepository = 'IEventLinkRepository',
+}
